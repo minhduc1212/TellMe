@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-electric-indigo: #4f46e5;
+  --color-electric-indigo-hover: #4338ca;
+  --color-cyan-signal: #06b6d4;
+  --color-cyan-signal-hover: #0891b2;
+  --color-cyan-light: #cffafe;
+  --color-canvas-white: #ffffff;
+  --color-panel-gray: #f8fafc;
+  --color-slate-dark: #0f172a;
+  --color-muted-slate: #64748b;
+  --color-border-light: #e2e8f0;
+  --color-border-hover: #cbd5e1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+
+  /* Typography */
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Type scale */
+  --text-tiny: 12px;
+  --text-caption: 14px;
+  --text-body-sm: 16px;
+  --text-body-lg: 20px;
+  --text-heading-sm: 24px;
+  --text-heading: 32px;
+  --text-display: 48px;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+  --shadow-sticky: 0 -4px 20px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-panel-gray);
+  color: var(--color-slate-dark);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-hover);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-muted-slate);
+}
+
+/* Animations */
+@keyframes pulse-cyan {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(6, 182, 212, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.highlight-word {
+  background-color: var(--color-cyan-light);
+  color: var(--color-slate-dark);
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0 2px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
